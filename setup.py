@@ -1,6 +1,12 @@
 from setuptools import find_packages, setup
 from typing import List
 
+
+"""
+this script is to make src dir an installable pythod package. this is a very best practice
+that allwos you to use clean imports like from "src.components.model_trainer import ModelTrainer"
+from anywhere from the project
+"""
 HYPHEN_E_DOT = '-e .'
 
 def get_requirements(file_path: str) -> List[str]:
