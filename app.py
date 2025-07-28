@@ -2,6 +2,8 @@ import pickle
 from flask import Flask, request, render_template
 import pandas as pd
 import numpy as np
+import traceback
+
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
@@ -51,6 +53,8 @@ def predict_datapoint():
         # send back results to the same page
         print("after Prediction")
         return render_template('home.html',results=results[0])
-
+    
 if __name__=="__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", port=5000)
+
+

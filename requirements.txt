@@ -8,3 +8,5 @@ xgboost
 Flask
 requests
 beautifulsoup4 
+gunicorn
+dill
