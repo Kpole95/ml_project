@@ -1,38 +1,60 @@
-Student Maths Score Predictor
-This is an end-to-end machine learning project that predicts a student's math score based on various demographic and academic factors. The project is built with a modular structure, containerized with Docker, and deployed on AWS EC2 with Nginx and Gunicorn.
+# 🎓 Student Maths Score Predictor
 
-🚀 Live Demo
+This project predicts a student's math score based on various demographic and academic factors. It follows a modular design, leverages Docker for containerization, and is hosted on an AWS EC2 instance using Nginx and Gunicorn for production deployment.
+
+---
+
+## 🌐 Live Demo
+
 You can access the live web application here:
 
-http://35.172.15.139
+**🔗 [http://35.172.15.139](http://35.172.15.139)**
 
-Note: The application is hosted on an AWS EC2 instance. The link will only be active as long as the instance is running.
+> ⚠️ **Note:** The application is hosted on an AWS EC2 instance. The link will only work while the instance is running.
 
-📋 Features
-Modular Code: The project is structured into distinct components for data ingestion, transformation, and model training.
+---
 
-Web Interface: A user-friendly web application built with Flask to input student data and receive real-time predictions.
+## 🚀 Features
 
-Automated Training Pipeline: A script to run the entire training process, from data ingestion to saving the final model.
+- **🧩 Modular Code**: The project is divided into separate components for data ingestion, transformation, and model training.
+- **🖥 Web Interface**: A simple Flask web app allows users to input student data and get real-time predictions.
+- **⚙️ Automated Training Pipeline**: A single script runs the full pipeline—from raw data ingestion to saving the final model.
+- **🐳 Containerized Deployment**: Uses Docker for consistent deployment across environments.
+- **☁️ Cloud Hosted**: Deployed on AWS EC2 with Nginx as a reverse proxy and Gunicorn as the WSGI server.
 
-Containerized Deployment: The application is containerized using Docker for consistent and reliable deployment.
+---
 
-Cloud Hosted: Deployed on an AWS EC2 instance with Nginx as a reverse proxy and Gunicorn as the application server.
+## 🛠 Technology Stack
 
-⚙️ Technology Stack
-Backend: Python, Flask, Gunicorn
+| Layer            | Tools & Libraries                     |
+|------------------|----------------------------------------|
+| **Backend**      | Python, Flask, Gunicorn                |
+| **Machine Learning** | Scikit-learn, Pandas, NumPy         |
+| **Deployment**   | Docker, AWS EC2, Nginx                 |
+| **Experimentation** | Jupyter Notebook                    |
 
-Machine Learning: Scikit-learn, Pandas, NumPy
+---
 
-Deployment: Docker, AWS EC2, Nginx
+## 🧪 ML Pipeline Overview
 
-Experimentation: Jupyter Notebook
+### 1. 📥 Data Ingestion
+- Reads raw CSV data.
+- Splits it into training and test sets.
+- Saves both datasets to the `/artifacts` folder.
 
-📊 ML Pipeline Overview
-The training process is broken down into three main stages:
+### 2. 🔧 Data Transformation
+- Handles missing values.
+- Scales numerical features.
+- Applies one-hot encoding to categorical features.
+- Saves the transformation pipeline as a `.pkl` (pickle) file.
 
-Data Ingestion: Reads the raw data, splits it into training and testing sets, and saves them in the /artifacts folder.
+### 3. 🧠 Model Training
+- Trains multiple regression models.
+- Uses `GridSearchCV` for hyperparameter tuning.
+- Selects the best model based on performance.
+- Saves the final model as a pickle file for inference.
 
-Data Transformation: Applies preprocessing to the data, such as handling missing values, scaling numerical features, and one-hot encoding categorical features. It saves the preprocessor object as a pickle file.
+---
 
-Model Training: Trains multiple regression models on the preprocessed data, uses GridSearchCV to find the best hyperparameters, and saves the best-performing model as a pickle file.
+## 📁 Project Structure
+
