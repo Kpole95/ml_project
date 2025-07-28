@@ -14,12 +14,7 @@ app=application
 
 ## route for a home page
 
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/predictdata", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def predict_datapoint():
     """
     GET request happens when the user firstt navigates to the page (to show the empty form to the users)
@@ -37,8 +32,8 @@ def predict_datapoint():
             parental_level_of_education=request.form.get('parental_level_of_education'),
             lunch=request.form.get('lunch'),
             test_preparation_course=request.form.get('test_preparation_course'),
-            reading_score=float(request.form.get('writing_score')),
-            writing_score=float(request.form.get('reading_score'))
+            reading_score=float(request.form.get('reading_score'))
+            writing_score=float(request.form.get('writing_score'))
         )
 
         # prepares the data and get a prediction
