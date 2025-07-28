@@ -54,7 +54,4 @@ You can access the live web application here:
 - Selects the best model based on performance.
 - Saves the final model as a pickle file for inference.
 
----
-
-## 📁 Project Structure
 
